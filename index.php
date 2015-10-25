@@ -68,21 +68,22 @@
     .hidden {
         visibility: hidden;
     }
+    .heightlight:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: solid 2px red;
+        box-sizing: border-box;
+    }
 
     html, body {
         position: relative;
         width: 100%;
         height: auto;
         min-height: 100%;
-    }
-
-    .h1 div, .h2 div, .h3 div, .h4 div, .h5 div {
-        float: left;
-        border: solid 7px #ddd;
-        border-right: solid 7px #aaa;
-        border-bottom: solid 7px #aaa;
-        box-sizing: border-box;
-        text-align: center;
     }
     .keycap_1u {
         width: 72px;
@@ -121,7 +122,15 @@
         height: 72px;
     }
     .keycap_row div {
+        position: relative;
+        float: left;
+        border: solid 7px #ddd;
+        border-right: solid 7px #aaa;
+        border-bottom: solid 7px #aaa;
+        box-sizing: border-box;
+        text-align: center;
         cursor: pointer;
+        word-break: break-all;
     }
     .keycap_row div:hover {
         background: #ddd;
@@ -131,75 +140,197 @@
 <body>
     <div class="type_1">
         <div class="h5 keycap_row clearfix">
-            <div id="code_192" class="vertical_centering keycap_1u">~</div>
-            <div id="code_49" class="vertical_centering keycap_1u">1</div>
-            <div id="code_50" class="vertical_centering keycap_1u">2</div>
-            <div id="code_51" class="vertical_centering keycap_1u">3</div>
-            <div id="code_52" class="vertical_centering keycap_1u">4</div>
-            <div id="code_53" class="vertical_centering keycap_1u">5</div>
-            <div id="code_54" class="vertical_centering keycap_1u">6</div>
-            <div id="code_55" class="vertical_centering keycap_1u">7</div>
-            <div id="code_56" class="vertical_centering keycap_1u">8</div>
-            <div id="code_57" class="vertical_centering keycap_1u">9</div>
-            <div id="code_48" class="vertical_centering keycap_1u">0</div>
-            <div id="code_189" class="vertical_centering keycap_1u">-</div>
-            <div id="code_187" class="vertical_centering keycap_1u">=</div>
-            <div id="code_8" class="vertical_centering keycap_2u">BackSpace</div>
+            <div class="keycap keycap_1u">
+                <span>~</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>1</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>2</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>3</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>4</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>5</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>6</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>7</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>8</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>9</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>0</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>-</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>=</span>
+            </div>
+            <div class="keycap keycap_2u">
+                <span>BackSpace</span>
+            </div>
         </div>
         <div class="h4 keycap_row clearfix">
-            <div id="code_9" class="vertical_centering keycap_1_5u">Tab</div>
-            <div id="code_81" class="vertical_centering keycap_1u">Q</div>
-            <div id="code_87" class="vertical_centering keycap_1u">W</div>
-            <div id="code_69" class="vertical_centering keycap_1u">E</div>
-            <div id="code_82" class="vertical_centering keycap_1u">R</div>
-            <div id="code_84" class="vertical_centering keycap_1u">T</div>
-            <div id="code_89" class="vertical_centering keycap_1u">Y</div>
-            <div id="code_85" class="vertical_centering keycap_1u">U</div>
-            <div id="code_73" class="vertical_centering keycap_1u">I</div>
-            <div id="code_79" class="vertical_centering keycap_1u">O</div>
-            <div id="code_80" class="vertical_centering keycap_1u">P</div>
-            <div id="code_219" class="vertical_centering keycap_1u">[</div>
-            <div id="code_221" class="vertical_centering keycap_1u">]</div>
-            <div id="code_220" class="vertical_centering keycap_1_5u">\</div>
+            <div class="keycap keycap_1_5u">
+                <span>Tab</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Q</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>W</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>E</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>R</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>T</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Y</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>U</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>I</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>O</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>P</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>[</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>]</span>
+            </div>
+            <div class="keycap keycap_1_5u">
+                <span>\</span>
+            </div>
         </div>
         <div class="h3 keycap_row clearfix">
-            <div id="code_20" class="vertical_centering keycap_1_75u">Caps Lock</div>
-            <div id="code_65" class="vertical_centering keycap_1u">A</div>
-            <div id="code_83" class="vertical_centering keycap_1u">S</div>
-            <div id="code_68" class="vertical_centering keycap_1u">D</div>
-            <div id="code_70" class="vertical_centering keycap_1u">F</div>
-            <div id="code_71" class="vertical_centering keycap_1u">G</div>
-            <div id="code_72" class="vertical_centering keycap_1u">H</div>
-            <div id="code_74" class="vertical_centering keycap_1u">J</div>
-            <div id="code_75" class="vertical_centering keycap_1u">K</div>
-            <div id="code_76" class="vertical_centering keycap_1u">L</div>
-            <div id="code_186" class="vertical_centering keycap_1u">;</div>
-            <div id="code_222" class="vertical_centering keycap_1u">'</div>
-            <div class="vertical_centering code_13 keycap_2_25u">Enter</div>
+            <div class="keycap keycap_1_75u">
+                <span>Caps Lock</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>A</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>S</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>D</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>F</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>G</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>H</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>J</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>K</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>L</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>;</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>'</span>
+            </div>
+            <div class="keycap keycap_2_25u">
+                <span>Enter</span>
+            </div>
         </div>
         <div class="h2 keycap_row clearfix">
-            <div class="vertical_centering code_16 keycap_2_25u">Shift</div>
-            <div id="code_90" class="vertical_centering keycap_1u">Z</div>
-            <div id="code_88" class="vertical_centering keycap_1u">X</div>
-            <div id="code_67" class="vertical_centering keycap_1u">C</div>
-            <div id="code_86" class="vertical_centering keycap_1u">V</div>
-            <div id="code_66" class="vertical_centering keycap_1u">B</div>
-            <div id="code_78" class="vertical_centering keycap_1u">N</div>
-            <div id="code_77" class="vertical_centering keycap_1u">M</div>
-            <div id="code_188" class="vertical_centering keycap_1u">,</div>
-            <div id="code_190" class="vertical_centering keycap_1u">.</div>
-            <div id="code_191" class="vertical_centering keycap_1u">/</div>
-            <div class="vertical_centering code_16 keycap_2_75u">Shift</div>
+            <div class="keycap keycap_2_25u">
+                <span>Shift</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Z</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>X</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>C</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>V</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>B</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>N</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>M</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>,</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>.</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>/</span>
+            </div>
+            <div class="keycap keycap_2_75u">
+                <span>Shift</span>
+            </div>
         </div>
         <div class="h1 keycap_row clearfix">
-            <div class="vertical_centering code_17 keycap_1_5u">Ctrl</div>
-            <div class="vertical_centering code_91 keycap_1u">Win</div>
-            <div class="vertical_centering code_18 keycap_1_25u">Alt</div>
-            <div id="code_32" class="vertical_centering keycap_6_5u">Spacebar</div>
-            <div class="vertical_centering code_18 keycap_1_25u">Alt</div>
-            <div class="vertical_centering code_92 keycap_1u">Win</div>
-            <div id="code_93" class="vertical_centering keycap_1u">Menu</div>
-            <div class="vertical_centering code_17 keycap_1_5u">Ctrl</div>
+            <div class="keycap keycap_1_5u">
+                <span>Ctrl</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Win</span>
+            </div>
+            <div class="keycap keycap_1_25u">
+                <span>Alt</span>
+            </div>
+            <div class="keycap keycap_6_5u">
+                <span>Spacebar</span>
+            </div>
+            <div class="keycap keycap_1_25u">
+                <span>Alt</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Win</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Menu</span>
+            </div>
+            <div class="keycap keycap_1_5u">
+                <span>Ctrl</span>
+            </div>
         </div>
     </div>
 
@@ -207,92 +338,239 @@
 
     <div class="type_2">
         <div class="h5 keycap_row clearfix">
-            <div id="code_192" class="vertical_centering keycap_1u">~</div>
-            <div id="code_49" class="vertical_centering keycap_1u">1</div>
-            <div id="code_50" class="vertical_centering keycap_1u">2</div>
-            <div id="code_51" class="vertical_centering keycap_1u">3</div>
-            <div id="code_52" class="vertical_centering keycap_1u">4</div>
-            <div id="code_53" class="vertical_centering keycap_1u">5</div>
-            <div id="code_54" class="vertical_centering keycap_1u">6</div>
-            <div id="code_55" class="vertical_centering keycap_1u">7</div>
-            <div id="code_56" class="vertical_centering keycap_1u">8</div>
-            <div id="code_57" class="vertical_centering keycap_1u">9</div>
-            <div id="code_48" class="vertical_centering keycap_1u">0</div>
-            <div id="code_189" class="vertical_centering keycap_1u">-</div>
-            <div id="code_187" class="vertical_centering keycap_1u">=</div>
-            <div id="code_8" class="vertical_centering keycap_2u">BackSpace</div>
+            <div class="keycap keycap_1u">
+                <span>~</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>1</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>2</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>3</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>4</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>5</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>6</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>7</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>8</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>9</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>0</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>-</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>=</span>
+            </div>
+            <div class="keycap keycap_2u">
+                <span>BackSpace</span>
+            </div>
         </div>
         <div class="h4 keycap_row clearfix">
-            <div id="code_9" class="vertical_centering keycap_1_5u">Tab</div>
-            <div id="code_81" class="vertical_centering keycap_1u">Q</div>
-            <div id="code_87" class="vertical_centering keycap_1u">W</div>
-            <div id="code_69" class="vertical_centering keycap_1u">E</div>
-            <div id="code_82" class="vertical_centering keycap_1u">R</div>
-            <div id="code_84" class="vertical_centering keycap_1u">T</div>
-            <div id="code_89" class="vertical_centering keycap_1u">Y</div>
-            <div id="code_85" class="vertical_centering keycap_1u">U</div>
-            <div id="code_73" class="vertical_centering keycap_1u">I</div>
-            <div id="code_79" class="vertical_centering keycap_1u">O</div>
-            <div id="code_80" class="vertical_centering keycap_1u">P</div>
-            <div id="code_219" class="vertical_centering keycap_1u">[</div>
-            <div id="code_221" class="vertical_centering keycap_1u">]</div>
-            <div id="code_220" class="vertical_centering keycap_1_5u">\</div>
+            <div class="keycap keycap_1_5u">
+                <span>Tab</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Q</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>W</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>E</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>R</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>T</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Y</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>U</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>I</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>O</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>P</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>[</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>]</span>
+            </div>
+            <div class="keycap keycap_1_5u">
+                <span>\</span>
+            </div>
         </div>
         <div class="h3 keycap_row clearfix">
-            <div id="code_20" class="vertical_centering keycap_1_75u">Caps Lock</div>
-            <div id="code_65" class="vertical_centering keycap_1u">A</div>
-            <div id="code_83" class="vertical_centering keycap_1u">S</div>
-            <div id="code_68" class="vertical_centering keycap_1u">D</div>
-            <div id="code_70" class="vertical_centering keycap_1u">F</div>
-            <div id="code_71" class="vertical_centering keycap_1u">G</div>
-            <div id="code_72" class="vertical_centering keycap_1u">H</div>
-            <div id="code_74" class="vertical_centering keycap_1u">J</div>
-            <div id="code_75" class="vertical_centering keycap_1u">K</div>
-            <div id="code_76" class="vertical_centering keycap_1u">L</div>
-            <div id="code_186" class="vertical_centering keycap_1u">;</div>
-            <div id="code_222" class="vertical_centering keycap_1u">'</div>
-            <div class="vertical_centering code_13 keycap_2_25u">Enter</div>
+            <div class="keycap keycap_1_75u">
+                <span>Caps Lock</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>A</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>S</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>D</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>F</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>G</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>H</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>J</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>K</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>L</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>;</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>'</span>
+            </div>
+            <div class="keycap keycap_2_25u">
+                <span>Enter</span>
+            </div>
         </div>
         <div class="h2 keycap_row clearfix">
-            <div class="vertical_centering code_16 keycap_2_25u">Shift</div>
-            <div id="code_90" class="vertical_centering keycap_1u">Z</div>
-            <div id="code_88" class="vertical_centering keycap_1u">X</div>
-            <div id="code_67" class="vertical_centering keycap_1u">C</div>
-            <div id="code_86" class="vertical_centering keycap_1u">V</div>
-            <div id="code_66" class="vertical_centering keycap_1u">B</div>
-            <div id="code_78" class="vertical_centering keycap_1u">N</div>
-            <div id="code_77" class="vertical_centering keycap_1u">M</div>
-            <div id="code_188" class="vertical_centering keycap_1u">,</div>
-            <div id="code_190" class="vertical_centering keycap_1u">.</div>
-            <div id="code_191" class="vertical_centering keycap_1u">/</div>
-            <div class="vertical_centering code_16 keycap_1_75u">Shift</div>
-            <div class="vertical_centering code_192 keycap_1u">~</div>
+            <div class="keycap keycap_2_25u">
+                <span>Shift</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Z</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>X</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>C</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>V</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>B</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>N</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>M</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>,</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>.</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>/</span>
+            </div>
+            <div class="keycap keycap_1_75u">
+                <span>Shift</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>~</span>
+            </div>
         </div>
         <div class="h1 keycap_row clearfix">
-            <div class="vertical_centering code_17 keycap_1_5u">Ctrl</div>
-            <div class="vertical_centering code_91 keycap_1u">Win</div>
-            <div class="vertical_centering code_18 keycap_1_25u">Alt</div>
-            <div id="code_32" class="vertical_centering keycap_6_5u">Spacebar</div>
-            <div class="vertical_centering code_18 keycap_1_25u">Alt</div>
-            <div class="vertical_centering code_92 keycap_1u">Win</div>
-            <div id="code_93" class="vertical_centering keycap_1u">Menu</div>
-            <div class="vertical_centering code_17 keycap_1_5u">Ctrl</div>
+            <div class="keycap keycap_1_5u">
+                <span>Ctrl</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Win</span>
+            </div>
+            <div class="keycap keycap_1_25u">
+                <span>Alt</span>
+            </div>
+            <div class="keycap keycap_6_5u">
+                <span>Spacebar</span>
+            </div>
+            <div class="keycap keycap_1_25u">
+                <span>Alt</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Win</span>
+            </div>
+            <div class="keycap keycap_1u">
+                <span>Menu</span>
+            </div>
+            <div class="keycap keycap_1_5u">
+                <span>Ctrl</span>
+            </div>
         </div>
     </div>
      <div id="key_select" class="pop_up popup_hide">
         <div class="pop_up_close"></div>
         <?php
-            include 'keys.php';
+            // include 'keys.php';
         ?>
     </div>
 </body>
-<script src="js/popup_view.js"></script>
+<!-- <script src="js/popup_view.js"></script> -->
+<script src="js/key_map.js"></script>
 <script>
-    var keySelect = new popup();
-
-    $('.keycap_row div').on('click', function (e) {
-        console.log(e.target);
-        keySelect.show(document.querySelector('#key_select'));
+    // var keySelect = new popup();
+    var unFcous;
+    $('body').on('click', function (e) {
+        if (unFcous) {
+            unFcous.removeClass('heightlight');
+        }
     });
+    $('.keycap_row div').on('click', function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log(e.target);
+        if (unFcous) {
+            unFcous.removeClass('heightlight');
+        }
+        unFcous = $(this);
+        $(this).addClass('heightlight');
+    //     keySelect.show(document.querySelector('#key_select'));
+    });
+    document.onkeydown = function(e) {
+        console.log(e);
+        if ($('.heightlight').length) {
+            e.preventDefault();
+            console.log(e.keyIdentifier);
+            $('.heightlight span').html(KEY_MAP[e.keyCode][e.location]);
+            unFcous.removeClass('heightlight');
+            // KEY_MAP[e.keyCode][e.keyLocation]
+        }
+    };
 </script>
 </html>
