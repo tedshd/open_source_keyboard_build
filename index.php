@@ -6,6 +6,27 @@
  *
  */
 ?>
+<?php
+$layout = $_GET['layout'];
+$layout_name = $_GET['layout'];
+if (!$layout_name) {
+    $layout_name = 'poke';
+}
+
+function buildLayout($layout)
+{
+    switch ($layout) {
+        case 'poke':
+            include 'layout_type_1.php';
+            break;
+        case 'pure':
+            include 'layout_type_2.php';
+            break;
+        default:
+           include 'layout_type_1.php';
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +42,7 @@
 <link rel="stylesheet" href="css/material.min.css">
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link href="css/popup_view.css" rel="stylesheet">
+
 <style>
     .clearfix {
         *zoom: 1;
@@ -68,6 +89,9 @@
     .hidden {
         visibility: hidden;
     }
+    button {
+        margin: 5px;
+    }
     .heightlight:after {
         content: "";
         position: absolute;
@@ -82,8 +106,12 @@
     html, body {
         position: relative;
         width: 100%;
-        height: auto;
+        height: 100%;
         min-height: 100%;
+        display: inline-block;
+    }
+    .layout_content {
+        margin-top: 10px;
     }
     .keycap_1u {
         width: 72px;
@@ -138,413 +166,94 @@
 </style>
 </head>
 <body>
-    <div class="type_1">
-        <div class="h5 keycap_row clearfix">
-            <div class="keycap keycap_1u">
-                <span>~</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>1</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>2</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>3</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>4</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>5</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>6</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>7</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>8</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>9</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>0</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>-</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>=</span>
-            </div>
-            <div class="keycap keycap_2u">
-                <span>BackSpace</span>
-            </div>
+    <!-- Simple header with scrollable tabs. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">
+                <?echo "Layout " . $layout_name;?>
+            </span>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Doenload</button>
         </div>
-        <div class="h4 keycap_row clearfix">
-            <div class="keycap keycap_1_5u">
-                <span>Tab</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Q</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>W</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>E</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>R</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>T</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Y</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>U</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>I</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>O</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>P</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>[</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>]</span>
-            </div>
-            <div class="keycap keycap_1_5u">
-                <span>\</span>
-            </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Tab 1</a>
+            <a href="#scroll-tab-2" class="mdl-layout__tab">Tab 2</a>
+            <a href="#scroll-tab-3" class="mdl-layout__tab">Tab 3</a>
+            <a href="#scroll-tab-4" class="mdl-layout__tab">Tab 4</a>
+            <a href="#scroll-tab-5" class="mdl-layout__tab">Tab 5</a>
+            <a href="#scroll-tab-6" class="mdl-layout__tab">Tab 6</a>
         </div>
-        <div class="h3 keycap_row clearfix">
-            <div class="keycap keycap_1_75u">
-                <span>Caps Lock</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>A</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>S</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>D</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>F</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>G</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>H</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>J</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>K</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>L</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>;</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>'</span>
-            </div>
-            <div class="keycap keycap_2_25u">
-                <span>Enter</span>
-            </div>
-        </div>
-        <div class="h2 keycap_row clearfix">
-            <div class="keycap keycap_2_25u">
-                <span>Shift</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Z</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>X</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>C</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>V</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>B</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>N</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>M</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>,</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>.</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>/</span>
-            </div>
-            <div class="keycap keycap_2_75u">
-                <span>Shift</span>
-            </div>
-        </div>
-        <div class="h1 keycap_row clearfix">
-            <div class="keycap keycap_1_5u">
-                <span>Ctrl</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Win</span>
-            </div>
-            <div class="keycap keycap_1_25u">
-                <span>Alt</span>
-            </div>
-            <div class="keycap keycap_6_5u">
-                <span>Spacebar</span>
-            </div>
-            <div class="keycap keycap_1_25u">
-                <span>Alt</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Win</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Menu</span>
-            </div>
-            <div class="keycap keycap_1_5u">
-                <span>Ctrl</span>
-            </div>
-        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Layout List</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="index.php?layout=poke">Layout Poke</a>
+            <a class="mdl-navigation__link" href="index.php?layout=pure">Layout KBT Pure</a>
+        </nav>
     </div>
+    <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+            <div class="page-content">
+                <div class="layout_content">
+                <?php buildLayout($layout); ?>
+                <br>
+                <?php include 'keys.php'; ?>
+                </div>
+            </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+            <div class="page-content">
+                <div class="layout_content">
+                <?php buildLayout($layout); ?>
+                <br>
+                <?php include 'keys.php'; ?>
+                </div>
+            </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-3">
+            <div class="page-content">
+                <div class="layout_content">
+                <?php buildLayout($layout); ?>
+                <br>
+                <?php include 'keys.php'; ?>
+                </div>
+            </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-4">
+            <div class="page-content">
+                <div class="layout_content">
+                <?php buildLayout($layout); ?>
+                <br>
+                <?php include 'keys.php'; ?>
+                </div>
+            </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-5">
+            <div class="page-content">
+                <div class="layout_content">
+                <?php buildLayout($layout); ?>
+                <br>
+                <?php include 'keys.php'; ?>
+                </div>
+            </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-6">
+            <div class="page-content">
+                <div class="layout_content">
+                <?php buildLayout($layout); ?>
+                <br>
+                <?php include 'keys.php'; ?>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
 
-    <br>
-
-    <div class="type_2">
-        <div class="h5 keycap_row clearfix">
-            <div class="keycap keycap_1u">
-                <span>~</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>1</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>2</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>3</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>4</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>5</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>6</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>7</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>8</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>9</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>0</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>-</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>=</span>
-            </div>
-            <div class="keycap keycap_2u">
-                <span>BackSpace</span>
-            </div>
-        </div>
-        <div class="h4 keycap_row clearfix">
-            <div class="keycap keycap_1_5u">
-                <span>Tab</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Q</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>W</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>E</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>R</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>T</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Y</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>U</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>I</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>O</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>P</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>[</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>]</span>
-            </div>
-            <div class="keycap keycap_1_5u">
-                <span>\</span>
-            </div>
-        </div>
-        <div class="h3 keycap_row clearfix">
-            <div class="keycap keycap_1_75u">
-                <span>Caps Lock</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>A</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>S</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>D</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>F</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>G</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>H</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>J</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>K</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>L</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>;</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>'</span>
-            </div>
-            <div class="keycap keycap_2_25u">
-                <span>Enter</span>
-            </div>
-        </div>
-        <div class="h2 keycap_row clearfix">
-            <div class="keycap keycap_2_25u">
-                <span>Shift</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Z</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>X</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>C</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>V</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>B</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>N</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>M</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>,</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>.</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>/</span>
-            </div>
-            <div class="keycap keycap_1_75u">
-                <span>Shift</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>~</span>
-            </div>
-        </div>
-        <div class="h1 keycap_row clearfix">
-            <div class="keycap keycap_1_5u">
-                <span>Ctrl</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Win</span>
-            </div>
-            <div class="keycap keycap_1_25u">
-                <span>Alt</span>
-            </div>
-            <div class="keycap keycap_6_5u">
-                <span>Spacebar</span>
-            </div>
-            <div class="keycap keycap_1_25u">
-                <span>Alt</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Win</span>
-            </div>
-            <div class="keycap keycap_1u">
-                <span>Menu</span>
-            </div>
-            <div class="keycap keycap_1_5u">
-                <span>Ctrl</span>
-            </div>
-        </div>
-    </div>
-     <div id="key_select" class="pop_up popup_hide">
-        <div class="pop_up_close"></div>
-        <?php
-            // include 'keys.php';
-        ?>
-    </div>
 </body>
-<!-- <script src="js/popup_view.js"></script> -->
 <script src="js/key_map.js"></script>
 <script>
-    // var keySelect = new popup();
     var unFcous;
     $('body').on('click', function (e) {
         if (unFcous) {
@@ -554,23 +263,28 @@
     $('.keycap_row div').on('click', function (e) {
         e.stopPropagation();
         e.preventDefault();
-        console.log(e.target);
         if (unFcous) {
             unFcous.removeClass('heightlight');
         }
         unFcous = $(this);
         $(this).addClass('heightlight');
-    //     keySelect.show(document.querySelector('#key_select'));
     });
-    document.onkeydown = function(e) {
+    document.onkeydown = function (e) {
         console.log(e);
         if ($('.heightlight').length) {
             e.preventDefault();
             console.log(e.keyIdentifier);
             $('.heightlight span').html(KEY_MAP[e.keyCode][e.location]);
             unFcous.removeClass('heightlight');
-            // KEY_MAP[e.keyCode][e.keyLocation]
         }
     };
+    $('.keys button').on('click', function (e) {
+        console.log(e);
+        console.log(e.currentTarget);
+        var val = e.currentTarget.innerText;
+        if ($('.heightlight').length) {
+            $('.heightlight span').html(val);
+        }
+    })
 </script>
 </html>
