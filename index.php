@@ -174,7 +174,7 @@ function buildLayout($layout)
             <span class="mdl-layout-title">
                 <?echo "Layout " . $layout_name;?>
             </span>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Doenload</button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Download</button>
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
