@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
+<link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset200802.css">
+<script src="/lib/jquery-1.10.1.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+
+</body>
+<script>
+var KEY = {
+    ansi: [
+        {
+            val: ['Ctrl', 'Win', 'Alt', 'Spacebar', 'Alt', 'Win', 'Menu', 'Ctrl'],
+            keyCode: ['17_1', '91_1', '18_1', '32_0', '18_2', '92_0', '93_0', '17_2'],
+            size: ['1_25', '1_25', '1_25', '6_25', '1_25', '1_25', '1_25', '1_25']
+        },
+        {
+            val: ['Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', 'Shift'],
+            keyCode: ['16_1', '90_0', '88_0', '67_0', '86_0', '66_0', '78_0', '77_0', '188_0', '190_0', '191_0', '16_2'],
+            size: ['2_25', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2_75']
+        },
+        {
+            val: ['Caps Lock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\'', 'Enter'],
+            keyCode: ['20_0', '65_0', '83_0', '68_0', '70_0', '71_0', '72_0', '74_0', '75_0', '76_0', '186_0', '222_0', '13_0'],
+            size: ['1_75', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2_25']
+        },
+        {
+            val: ['Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\/'],
+            keyCode: ['9_0', '81_0', '87_0', '69_0', '82_0', '84_0', '89_0', '85_0', '73_0', '79_0', '80_0', '219_0', '221_0', '220_0'],
+            size: ['1_5', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1_5']
+        },
+        {
+            val: [ '~', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Back Space'],
+            keyCode: ['192_0', '49_0', '50_0', '51_0', '52_0', '53_0', '54_0', '55_0', '56_0', '57_0', '48_0', '189_0', '187_0', '8_0'],
+            size: ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2']
+        }
+    ],
+    iso: [],
+    jis: []
+};
+
+function initKeyboard () {
+    var ansi = KEY.ansi,
+        keyboard = document.createElement('div'),
+        rowCount = [8, 12, 13, 14, 14];
+    keyboard.setAttribute('class', 'keyboard clearfix');
+    for (var i = 5 - 1; i >= 0; i--) {
+        var row = document.createElement('div');
+        row.setAttribute('class', 'clearfix row-' + i);
+        for (var j = 0; j < rowCount[i]; j++) {
+            var keycaps = document.createElement('div');
+            keycaps.setAttribute('class', 'keycaps keycap_' + ansi[i].size[j] + ' code_' + ansi[i].keyCode[j] + '');
+            keycaps.innerHTML = ansi[i].val[j];
+            row.appendChild(keycaps);
+        }
+        keyboard.appendChild(row);
+    }
+    document.body.appendChild(keyboard);
+
+}
+
+initKeyboard();
+</script>
+</html>
