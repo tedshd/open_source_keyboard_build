@@ -146,3 +146,37 @@
 .blank_0_66 {
     width: 2.31pc
 }
+
+/*.keycap_enter_iso:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 42px;
+  left: -7px;
+  width: 21px;
+  box-sizing: border-box;
+  border-left: 7px solid #ddd;
+  border-bottom: 7px solid #aaa;
+}
+
+.keycap_enter_iso {
+  border-bottom: transparent;
+  width: 84px;
+}
+
+.keycap_enter_iso:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 49px;
+  right: -7px;
+  width: 70px;
+  height: 56px;
+  border: 7px solid #ddd;
+  border-top: transparent;
+  border-right: 7px solid #aaa;
+  border-bottom: 7px solid #aaa;
+  box-sizing: border-box;
+  text-align: center;
+  word-break: break-all;
+}*/
